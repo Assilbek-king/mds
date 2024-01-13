@@ -63,3 +63,12 @@ class Otziv(models.Model):
 
     def __str__(self):
         return f'{self.title} '
+
+
+class Fon(models.Model):
+    foto1 = models.ImageField(upload_to='upload', blank=True)
+    foto2 = models.ImageField(upload_to='upload', blank=True)
+    foto3 = models.ImageField(upload_to='upload', blank=True)
+
+    def __str__(self):
+        return f'{self.foto1}'

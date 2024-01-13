@@ -14,6 +14,11 @@ def indexHandler(request):
     partners = Partner.objects.all()
     otzivs = Otziv.objects.all()
     feeds = Feedback.objects.all()
+    foto = ''
+    try:
+        foto = Fon.objects.get(id=1)
+    except Fon.DoesNotExist:
+        pass
     contact = ''
     try:
         contact = Contact.objects.get(id=1)
@@ -58,6 +63,7 @@ def indexHandler(request):
         'services': services,
         'feeds': feeds,
         'otzivs': otzivs,
+        'foto': foto,
     })
 
 
